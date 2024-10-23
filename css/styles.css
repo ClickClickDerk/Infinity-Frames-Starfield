@@ -1,0 +1,128 @@
+/* General styles */
+body, html {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive;
+    scroll-behavior: none;
+}
+
+p {
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 4px black, 0 0 6px black, 0 0 8px black, -10px 0px 18px black;
+}
+
+/* Starfield background canvas */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Ensure starfield is behind everything */
+    background-color: transparent;
+}
+
+/* Three.js canvas for grid and 3D scene */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure it's above the starfield */
+    background-color: transparent;
+}
+
+/* iFrame styles */
+iframe {
+    border: none;
+    bottom: 25%;
+}
+
+/* GUI styles */
+.gui {
+    position: absolute;
+    background: black;
+    padding: 10px;
+    border: 1px solid black;
+    z-index: 1000; /* Ensure it's on top of the 3D scene */
+    width: 180px;
+    height: 100%;
+    overflow-y: auto;
+    top: 8px;
+    bottom: 8px;
+    align-items: center;
+    text-align: center;
+    animation: glowPulse 2s infinite alternate;
+}
+
+/* Custom scrollbar styling for GUI */
+.gui::-webkit-scrollbar {
+    width: 10px;
+}
+
+.gui::-webkit-scrollbar-track {
+    background: #111;
+}
+
+.gui::-webkit-scrollbar-thumb {
+    background-color: #CF19B9;
+    border-radius: 20px;
+    border: 2px solid #111;
+}
+
+/* GUI buttons and dropdown styling */
+#gui button, #gui select {
+    margin: 5px;
+    background: #333;
+    color: white;
+    background: black;
+    box-shadow: 2px 0px 10px black, -2px 0px 10px black;
+    background: -webkit-linear-gradient(black, #666666 20%, black 100%);
+    background: -o-linear-gradient(black, #666666 20%, black 100%);
+    background: -moz-linear-gradient(black, #666666 20%, black 100%);
+    background: linear-gradient(black, #666666 20%, black 100%);
+    border: none;
+    border-radius: 8px;
+    width: 90%;
+    height: 37px;
+    cursor: pointer;
+    display: block;
+}
+
+/* Hover effect for buttons */
+#gui button:hover {
+    background: black;
+    background: -webkit-linear-gradient(black, #666666 35%, black 100%);
+    background: -o-linear-gradient(black, #666666 15%, black 100%);
+    background: -moz-linear-gradient(black, #666666 15%, black 100%);
+    background: linear-gradient(black, #666666 35%, black 100%);
+}
+
+/* Text glow effect */
+.glow-text {
+    text-shadow: 0 0 10px #000, 0 0 20px #CF19B9,
+        0 0 30px #CF19B9, 0 0 40px #CF19B9;
+    transform: skew(-10deg);
+}
+
+/* iFrame list inside GUI */
+#iframe-list {
+    max-height: 80px;
+    max-width: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Animation glow effect for GUI */
+@keyframes glowPulse {
+    from {
+        box-shadow: 0px 0px 10px #CF19B9, 0 0 2px #CF19B9, 0 0 10px #CF19B9;
+    }
+    to {
+        box-shadow: 0px 0px 15px #CF19B9, 0 0 5px #CF19B9, 0 0 15px #CF19B9;
+    }
+}
