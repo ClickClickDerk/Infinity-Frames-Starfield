@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity-Frames-Starfield</title>
+</head>
+<body onload="inject()">
+    <div class="background-animation">
+        <canvas id="starfield"></canvas>
+    </div>
+    <div id="gui" class="gui">
+        <label for="iframeSrc"><p class="glow-text">iFrame Src:</p></label>
+        <input type="text" id="iframeSrc" value="https://clickclickderk.github.io/infinity-editor/">
+        <label for="positionX"><p class="glow-text">Position X:</p></label>
+        <input type="number" id="positionX" value="0">
+        <label for="positionY"><p class="glow-text">Position Y:</p></label>
+        <input type="number" id="positionY" value="0">
+        <label for="positionZ"><p class="glow-text">Position Z:</p></label>
+        <input type="number" id="positionZ" value="0">
+        <button id="createIframe"><p class="glow-text">Create Iframe</p></button>
+        <button id="toggle-mode"><p class="glow-text">Switch to Fly Mode</p></button>
+        <button id="toggle-grid"><p class="glow-text">Toggle Grid</p></button>
+        <div id="iframe-list"></div>
+        <input type="text" id="iframe-url" placeholder="Iframe URL" value="">
+        <button id="update-iframe-url"><p class="glow-text">Update Iframe URL</p></button>
+        <h3><p class="glow-text">Playlist Controls</p></h3>
+        <button id="next-iframe"><p class="glow-text">Next Iframe</p></button>
+        <button id="prev-iframe"><p class="glow-text">Previous Iframe</p></button>
+        <button id="delete-iframe"><p class="glow-text">Delete Selected Iframe</p></button>
+        <div id="playlist"></div>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="PEKCHPJQXYZBA" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </div>
+    <script>
+        var favicon = document.createElement("link");
+        favicon.setAttribute("rel", "icon");
+        favicon.setAttribute("type", "image/jpg");
+        favicon.setAttribute("href", "img/play.jpg");
+        document.head.appendChild(favicon);
+
+        var css = document.createElement("link");
+        css.setAttribute("rel", "stylesheet");
+        css.setAttribute("type", "text/css");
+        css.setAttribute("href", "css/styles.css");
+        document.head.appendChild(css);
+
+        var js = document.createElement("script");
+        js.setAttribute("async", "true");
+        js.setAttribute("src", "js/main.js");
+        document.head.appendChild(js);
+
+        var js = document.createElement("script");
+        js.setAttribute("async", "true");
+        js.setAttribute("src", "js/stats.min.js");
+        document.head.appendChild(js);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/FlyControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/DragControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/TransformControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS3DRenderer.js"></script>
+    </body>
+</html>
